@@ -50,6 +50,9 @@ jobs:
             target: 'Visual Studio 16 2019'
     steps:
       - uses: actions/checkout@v2
+      - name: install dependencies
+        run: |
+            vcpkg install openssl zlib
       - name: Build and test
         shell: cmd
         run: |

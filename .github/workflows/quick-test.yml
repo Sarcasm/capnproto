@@ -61,6 +61,9 @@ jobs:
           conda install -n base -c defaults -q ninja openssl zlib
       - name: Build and test
         shell: cmd
+        env:
+          CC: cl.exe
+          CXX: cl.exe
         run: |
             echo "Activate conda base environment"
             call activate base
